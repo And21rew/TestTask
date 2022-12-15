@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -11,12 +9,12 @@ public class Step : MonoBehaviour
 
     private void Awake()
     {
-        stepNumber = int.Parse(gameObject.name.Split("_")[1]);
+        stepNumber = int.Parse(gameObject.name.Split("_")[1]) - 1;
         textStepNumber = gameObject.GetComponentInChildren<TMP_Text>();
     }
 
     private void Start()
     {
-        textStepNumber.text = stepNumber.ToString();
+        textStepNumber.text = (stepNumber + 1).ToString();
     }
 }
